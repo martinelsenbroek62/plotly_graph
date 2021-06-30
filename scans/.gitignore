@@ -1,0 +1,4 @@
+*.csv
+*.bz2
+*.lhi
+!dummy.csv.bz2

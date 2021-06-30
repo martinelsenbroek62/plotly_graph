@@ -1,0 +1,8 @@
+.vscode
+*.pyc
+*.gcode
+*.nc
+*.mock
+data.pickle
+config.json
+.DS_store

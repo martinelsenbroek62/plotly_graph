@@ -1,0 +1,192 @@
+{
+    "toolPathGenerator": {
+        "debug": false,
+        "localDevelopmentMode": false,
+        "outputDirectory": "output",
+        "mainWorkingRadiusPercent": 50,
+        "segmentType": "line",
+        "minLineSegmentLength": 20,
+        "maxCircleSegmentDifference": 0.005,
+        "leadInOutXLength": 26.0,
+        "workOffsets": {
+            "cut": {
+                "number": "G54",
+                "x": 136.513,
+                "y": 0,
+                "z": 0
+            },
+            "scan": {
+                "number": "G55",
+                "x": 5.0,
+                "y": -135.174,
+                "z": -284.804
+            }
+        },
+        "output": {
+            "cut": {
+                "top": true,
+                "bottom": true
+            },
+            "deburr": true
+        },
+        "cut": {
+            "depth": 0.1,
+            "toolNumber": 3,
+            "SFM": 250,
+            "IPT": 0.0026,
+            "RPMMultiplier": 2.0,
+            "CLF": 1.0,
+            "profile": {
+                "enable": true,
+                "finishingDepth": 0.15,
+                "maxDepth": 0.5,
+                "SFM": 175,
+                "IPT": 0.0026,
+                "RPMMultiplier": 1.0,
+                "CLF": 2.75,
+                "sections": [
+                    {
+                        "radius": 2548.0,
+                        "startPercentage": 25.0,
+                        "endPercentage": 35.0
+                    },
+                    {
+                        "radius": 3548.0,
+                        "startPercentage": 35.0,
+                        "endPercentage": 75.0
+                    },
+                    {
+                        "radius": 2548.0,
+                        "startPercentage": 75.0,
+                        "endPercentage": 85.0
+                    }
+                ]
+            },
+            "toolLife": {
+                "enable": true,
+                "depth": 0.2,
+                "SFM": 125,
+                "IPT": 0.0026,
+                "RPMMultiplier": 3.0,
+                "CLF": 2.0,
+                "passes": 10
+            }
+        },
+        "deburr": {
+            "toolNumber": 11,
+            "feedrate": 2500.0,
+            "spindleRpm": 10000
+        },
+        "scans": {
+            "feedrate": 2000.0
+        },
+        "scanner": {
+            "toolNumber": 10,
+            "yAxisAccuracy": [-30,30],
+            "frequency": 500,
+            "zSpacing": 0.05,
+            "offsets": {
+                "y": -75.947
+            }
+        },
+        "fixture": {
+            "cartridge": {
+                "xAxisReference": {
+                    "length": 17.5
+                },
+                "zShapes": {
+                    "272": {
+                        "top": {
+                            "class_name": "Line",
+                            "x1": 200.0,
+                            "y1": -364.75315,
+                            "m": -0.0002252777778
+                        },
+                        "bottom": {
+                            "class_name": "Line",
+                            "x1": 200.0,
+                            "y1": -391.65027,
+                            "m": -0.0001651388889
+                        }
+                    },
+                    "296": {
+                        "top": {
+                            "class_name": "Line",
+                            "x1": 200.0,
+                            "y1": -364.79122,
+                            "m": 0.0006117222222
+                        },
+                        "bottom": {
+                            "class_name": "Line",
+                            "x1": 200.0,
+                            "y1": -391.4774,
+                            "m": -0.00004422222222
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "scanner": {
+        "host": "http://127.0.0.1",
+        "port": 445,
+        "batchProfiles": 5500,
+        "connection": {
+            "type": "eth",
+            "host": "192.168.0.18",
+            "port": 24691
+        }
+    },
+    "mill": {
+        "host": "http://127.0.0.1",
+        "port": 8000,
+        "scanProgramPath": "/home/operator/gcode/Skatescribe/Laser Programs/laser.nc",
+        "gcodeDirectory": "/home/operator/gcode",
+        "tools": [
+            {
+                "number": 1,
+                "form": "endmill",
+                "diameter": 15.880,
+                "numberOfFlutes": 6,
+                "sideProfileRadius": 12.7
+            },
+            {
+                "number": 2,
+                "form": "endmill",
+                "diameter": 15.776,
+                "numberOfFlutes": 6,
+                "sideProfileRadius": 15.875
+            },
+            {
+                "number": 3,
+                "form": "endmill",
+                "diameter": 15.822,
+                "numberOfFlutes": 6,
+                "sideProfileRadius": 14.2875
+            },
+            {
+                "number": 10,
+                "form": "deburr_brush",
+                "diameter": 58.0
+            }
+        ],
+        "smb": {
+            "server": "127.0.0.1",
+            "share": "share",
+            "port": 445,
+            "username": "smbuser",
+            "password": "smbpassword"
+        }
+    },
+    "database": {
+        "database": "ares_backend",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "user": "ares_backend_user",
+        "password": "dummypassword"
+    },
+    "flask": {
+        "debug": true,
+        "port": 8000
+    }
+}
